@@ -5,7 +5,16 @@
 </template>
 <script setup>
 
-const alert = useAlert()
-console.log("the composable", alert.value)
+
+
+
+
+useHead({
+  title: 'About page',
+  meta: [{
+    name: ' about page',
+    content: 'Eyob nigussie About page'
+  }]
+})
 
 </script>

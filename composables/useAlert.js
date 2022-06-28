@@ -1,3 +1,3 @@
 export default function() {
-    return useState('alert', () => false)
+    return useState('alert', () => '')
 }

@@ -98,7 +98,7 @@ const router = useRouter()
 const displayMenu = ref(false);
 
 
-function onResize(){
+const onResize = () => {
 
   console.log("on resize")
   displayMenu.value = false;

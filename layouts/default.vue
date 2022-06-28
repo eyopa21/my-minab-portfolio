@@ -1,11 +1,14 @@
 <template>
-  <div>
+  <div >
+  
     <Navbar/>
 
-    <slot />
 
+    <slot />
+    <alert/>
     <Footer />
   </div>
 </template>
 <script setup>
+
 </script>

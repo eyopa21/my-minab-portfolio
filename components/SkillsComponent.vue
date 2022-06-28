@@ -1,7 +1,7 @@
 <template>
   <div>
-    <section id="skills" class="mb-32">
-      <div class="flex flex-col lg:flex-row justify-start ml-2 md:ml-16 mx-auto mt-10">
+    <section id="skills" class="mb-32 flex flex-col lg:flex-row justify-start ml-2 md:ml-16 mx-auto mt-10">
+      
         <div class="flex flex-col mb-32 space-y-6 lg:w-1/2">
           <h1 class="text-4xl md:text-7xl font-bold text-left md:text-left text-primary font-serif mr-8">
             Skills and Experience
@@ -18,11 +18,9 @@
             <ProgressBar :skills= 'skill'/>
           </div>
         </div>
-          <div class="flex fixed w-full md:w-[93%] justify-end md:justify-start mb-32 pr-6 md:-ml-[50px]">
-         <SocialLinks/>
-          </div>
         
-      </div>
+        
+
     </section>
   </div>
 </template>
