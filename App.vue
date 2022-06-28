@@ -9,4 +9,9 @@
       <NuxtPage />
     </NuxtLayout>
   </div>
+
+  <Head>
+  <Link rel="icon" href="https://i.imgur.com/9KKweni.jpeg"></Link>
+  <Title>Eyoba</Title>
+  </Head>
 </template>
