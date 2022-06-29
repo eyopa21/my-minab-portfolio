@@ -8,7 +8,7 @@
           
         
         </div>
-        <div><img src="https://i.imgur.com/9KKweni.jpeg" alt="image" class=" h-96 w-96 rounded-3xl mr-16 pr-4"></div>
+        <div class="container mx-auto md:w-1/3"><img src="https://i.imgur.com/9KKweni.jpeg" alt="image" class="h-96 w-full  rounded-3xl mr-16 pr-4"></div>
       
  
     </section>
