@@ -120,7 +120,7 @@ axios({
   method: "post",
   url: "/api",
   data: formData.value,
-  //headers: { "Content-Type": "multipart/form-data" },
+  headers: { "Content-Type": "application/json" },
 }).then((res) => {
   console.log(res)
   console.log("sent")
