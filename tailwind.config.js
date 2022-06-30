@@ -38,6 +38,11 @@ module.exports = {
             },
             spacing: {
                 '128': '32rem',
+            },
+            fontFamily: {
+                logo: 'Rubik Moonrocks',
+                main: 'Righteous',
+                test1: 'Cinzel'
             }
         },
     },

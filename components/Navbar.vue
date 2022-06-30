@@ -1,7 +1,7 @@
 <template>
-  <nav class="relative bg-bg_color text-white text-lg mx-auto p-6 font-serif">
+  <nav class="relative border-b-[1px] md:border-b-0 mb-8 border-white bg-bg_color text-white text-lg mx-auto p-6 font-serif">
     <div class="flex justify-between items-center">
-      <div class=" text-5xl">Eyoba</div>
+      <div class="font-logo text-3xl"><NuxtLink to="/">Eyoba</NuxtLink></div>
       <div class="hidden md:flex">
         <NuxtLink to="/" :class="[$route.fullPath == ('/') ? 'border-primary' : 'border-white']" class="hover:text-primary md:px-8 lg:px-12 border-b-2 pb-2 ">Home</NuxtLink>
         <NuxtLink to="/about" :class="[$route.fullPath == ('/about') ? 'border-primary' : 'border-white']" class="hover:text-primary md:px-8 lg:px-12 border-b-2 pb-2 ">About</NuxtLink>

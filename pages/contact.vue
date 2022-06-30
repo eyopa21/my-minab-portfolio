@@ -1,20 +1,20 @@
 <template>
   <div>
     <section id="skills" class="mb-32">
-      <div class="flex flex-col md:flex-row justify-start ml-4 md:ml-16 mx-auto mt-10">
+      <div class="flex flex-col md:flex-row justify-start mx-2 md:ml-16 mt-10">
         <div class="flex flex-col mb-8 space-y-6 md:w-1/2">
           <h1
-            class="text-2xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-left md:text-left text-primary font-serif">
+            class="text-5xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-left md:text-left text-primary font-serif">
             Contact me
           </h1>
-          <p class="text-left text-secondary mr-8 md:mr-0">
+          <p class="text-left text-secondary md:mr-0">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry.
             Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
             when an unknown printer took a galley of type and scrambled it to make a type
             specimen book.
           </p>
         </div>
-        <div class="md:ml-12">
+        <div class="md:ml-12 ">
           <form @submit.prevent="send()" class="px-2 pt-6 pb-8 mb-4 bg-bg_color rounded">
             <div class="mb-2 flex justify-start space-x-4 md:flex md:justify-between w-full max-w-md">
               <div class="mb-4 md:mr-2 md:mb-0 w-full">
@@ -134,7 +134,7 @@ axios({
       formData.value.message = '';
     }
 }).catch((error) => {
-  console.log(error);
+  console.log("erri",error);
   if (process.client) {
       loading.value = false;
       alert.value = 'Request not sent, please try again!!'
