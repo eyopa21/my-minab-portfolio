@@ -15,11 +15,11 @@ app.post("/api", (req, res) => {
 
     const options = {
         method: 'POST',
-        url: process.env.SEND_GRID_URL,
+        url: 'https://rapidprod-sendgrid-v1.p.rapidapi.com/mail/send',
         headers: {
             'content-type': 'application/json',
-            'X-RapidAPI-Key': process.env.SEND_GRID_API_KEY,
-            'X-RapidAPI-Host': process.env.SEND_GRID_HOST_NAME
+            'X-RapidAPI-Key': 'ae5381ecc8msh0f57ec82fa1bea2p1bb060jsn95500a02d0b4',
+            'X-RapidAPI-Host': 'rapidprod-sendgrid-v1.p.rapidapi.com'
         },
         data: `{"personalizations":[{"to":[{"email":"jobtennis21@gmail.com"}],"subject":" ${req.body.name}: ${req.body.subject}"}],"from":{"email":"${req.body.email}"},"content":[{"type":"text/plain","value":"${req.body.message}"}]}`
     };

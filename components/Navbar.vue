@@ -71,7 +71,7 @@ import {XIcon} from '@heroicons/vue/outline'
 
 const router = useRouter()
 
-//console.log(router)
+
 
 const displayMenu = ref(false);
 
