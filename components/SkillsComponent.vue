@@ -1,8 +1,8 @@
 <template>
-  <div>
-    <section id="skills" class="mb-32 flex flex-col lg:flex-row justify-start ml-2 md:ml-16 mx-auto mt-10">
+ 
+    <section id="skills" class="mb-64 flex flex-col lg:flex-row justify-start ml-2 md:ml-16 mx-auto">
       
-        <div class="flex flex-col mb-16 space-y-6 lg:w-1/2">
+        <div class="flex flex-col mb-16 space-y-6 lg:w-1/2 lg:ml-8">
           <h1 class="text-5xl md:text-7xl font-bold text-left md:text-left text-primary font-serif mr-8">
             Skills and Experience
           </h1>
@@ -22,29 +22,29 @@
         
 
     </section>
-  </div>
+
 </template>
 <script setup>
 import { ref } from 'vue';
 const skills = ref([{
   name: 'html',
   level: 50,
-  color: 'bg-gray-300'
+  color: 'bg-green-600'
 },
 {
   name: 'css',
   level: 40,
-  color: 'bg-green-300'
+  color: 'bg-green-600'
 },
 {
   name: 'js',
   level: 30,
-  color: 'bg-blue-300'
+  color: 'bg-green-600'
 },
 {
   name: 'vue',
   level: 90,
-  color: 'bg-red-300'
+  color: 'bg-green-600'
 },
 ])
 

@@ -15,11 +15,11 @@ app.post("/api", (req, res) => {
 
     const options = {
         method: 'POST',
-        url: 'https://rapidprod-sendgrid-v1.p.rapidapi.com/mail/send',
+        url: process.env.SEND_GRID_URL,
         headers: {
             'content-type': 'application/json',
-            'X-RapidAPI-Key': 'ae5381ecc8msh0f57ec82fa1bea2p1bb060jsn95500a02d0b4',
-            'X-RapidAPI-Host': 'rapidprod-sendgrid-v1.p.rapidapi.com'
+            'X-RapidAPI-Key': process.env.SEND_GRID_API_KEY,
+            'X-RapidAPI-Host': process.env.SEND_GRID_HOST_NAME
         },
         data: `{"personalizations":[{"to":[{"email":"jobtennis21@gmail.com"}],"subject":" ${req.body.name}: ${req.body.subject}"}],"from":{"email":"${req.body.email}"},"content":[{"type":"text/plain","value":"${req.body.message}"}]}`
     };
@@ -31,8 +31,8 @@ app.post("/api", (req, res) => {
 
 
     }).catch(function(error) {
-        //console.error(error);
-        res.send(error.message)
+        console.error(error);
+        res.send("Something went wrong, please try again!!")
     });
 
 });

@@ -2,7 +2,7 @@
     <div class="text-white">
         {{props.skills.name}}: {{props.skills.level}}%
     </div>
-  <div class="w-full max-w-md sm:w-96 h-1 bg-gray-400 relative rounded-full">
+  <div class="w-full max-w-md sm:w-96 h-1 bg-white relative rounded-full">
     <div
       class="h-full rounded-l-full absolute "
       :style="{'width': `${props.skills.level}%`}"

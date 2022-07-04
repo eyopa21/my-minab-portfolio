@@ -13,17 +13,23 @@ import { ref } from 'vue';
 const projects = ref([{
   title: 'title1',
   subTitle: 'subtitle1',
-  description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+  description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+  link: 'https://gbi-date.web.app',
+  image: 'http://placeimg.com/640/480/sports'
 },
 {
   title: 'title2',
   subTitle: 'subtitle2',
-  description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+  description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+  link: 'https://gbi-date.web.app',
+  image: 'http://placeimg.com/640/480/sports'
 },
 {
   title: 'title3',
   subTitle: 'subtitle3',
-  description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+  description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+  link: 'https://gbi-date.web.app',
+  image: 'http://placeimg.com/640/480/sports'
 }])
 
 

@@ -1,6 +1,8 @@
 <script setup>
 
 
+
+
 </script>
 
 <template>
@@ -12,6 +14,6 @@
 
   <Head>
   <Link rel="icon" href="https://i.imgur.com/9KKweni.jpeg"></Link>
-  <Title>Eyoba</Title>
+  <!--Title>Eyoba</Title-->
   </Head>
 </template>
