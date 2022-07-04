@@ -12,6 +12,7 @@
       mx-auto
       mt-16
       text-primary
+      mb-32
     "
   >
     <div class="flex flex-col mb-32 space-y-4 w-full">
