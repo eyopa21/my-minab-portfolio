@@ -57,7 +57,7 @@ useHead({
   title: "Home page",
   meta: [
     {
-      name: " home page",
+      name: " Home page",
       content: "Eyob nigussie Home page",
     },
   ],
