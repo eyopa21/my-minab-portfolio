@@ -13,7 +13,7 @@
   </div>
 
   <Head>
-  <Link rel="icon" href="./assets/img/eyobaaaaaaaaa.jpg"></Link>
+  <Link rel="icon" href="https://firebasestorage.googleapis.com/v0/b/gbi-date.appspot.com/o/images%2Feyobaaaaaaaaa.jpg?alt=media&token=fcd6b46e-51ab-434f-97dd-70ae19761d06"></Link>
   <!--Title>Eyoba</Title-->
   </Head>
 </template>

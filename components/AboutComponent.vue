@@ -8,7 +8,7 @@
           
         
         </div>
-        <div class="container mx-auto md:w-1/3"><img src="../assets/img/eyobaaaaaaaaa.jpg" alt="image" class="h-96 w-full object-contain rounded-3xl mr-16 pr-4"></div>
+        <div class="container mx-auto md:w-1/3"><img src="https://firebasestorage.googleapis.com/v0/b/gbi-date.appspot.com/o/images%2Feyobaaaaaaaaa.jpg?alt=media&token=fcd6b46e-51ab-434f-97dd-70ae19761d06" alt="image" class="h-96 w-full object-contain rounded-3xl mr-16 pr-4"></div>
       
  
     </section>
