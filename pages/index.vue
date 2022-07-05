@@ -1,6 +1,6 @@
 <template>
   <section
-    id="hero"
+    id="home"
     class="
       font-serif
       flex
@@ -22,7 +22,7 @@
           text-3xl
           sm:text-[46px]
           md:text-7xl
-          lg:text-8xl
+          
           font-bold
           text-left
           leading-[46px]
@@ -47,6 +47,7 @@
 
     
   </section>
+ 
 
   
 </template>

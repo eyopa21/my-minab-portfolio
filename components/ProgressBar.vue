@@ -1,5 +1,5 @@
 <template>
-    <div class="text-white">
+    <div class="text-white text-sm">
         {{props.skills.name}}: {{props.skills.level}}%
     </div>
   <div class="w-full max-w-md sm:w-96 h-1 bg-white relative rounded-full">

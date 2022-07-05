@@ -1,12 +1,17 @@
 <script setup>
 import { PhoneIncomingIcon } from '@heroicons/vue/outline'
 import { MailIcon } from '@heroicons/vue/outline'
+import { ref } from 'vue';
+
+const showTooltip = ref(false)
 </script>
 
 <template>
+
   <div class="flex flex-col justify-center text-white">
+  
     <a href="tel:+251918784596" class="h-8"
-      ><PhoneIncomingIcon class="text-white w-6 h-6 hover:stroke-primary" /></a>
+      ><PhoneIncomingIcon class="text-white w-6 h-6 hover:stroke-primary"  @mouseover="showTooltip = true" @mouseleave="showTooltip = false"/> </a>
     <a href="/contact" class="h-8"
       ><MailIcon class="text-white w-6 h-6 hover:stroke-primary" /></a>
     <a href="https://www.facebook.com/eyob.nigussie.311" target="_blank" class="h-8"

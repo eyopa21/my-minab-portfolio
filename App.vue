@@ -13,7 +13,7 @@
   </div>
 
   <Head>
-  <Link rel="icon" href="https://i.imgur.com/9KKweni.jpeg"></Link>
+  <Link rel="icon" href="./assets/img/eyobaaaaaaaaa.jpg"></Link>
   <!--Title>Eyoba</Title-->
   </Head>
 </template>
