@@ -1,21 +1,24 @@
 {
-  "private": true,
-  "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview"
-  },
-  "devDependencies": {
-    "nuxt": "3.0.0-rc.4",
-    "tailwindcss": "^3.1.4"
-  },
-  "dependencies": {
-    "@heroicons/vue": "^1.0.6",
-    "@vee-validate/rules": "^4.5.11",
-    "axios": "^0.27.2",
-    "dotenv": "^16.0.1",
-    "express": "^4.18.1",
-    "vee-validate": "^4.5.11"
-  }
+    "private": true,
+    "scripts": {
+        "build": "nuxt build",
+        "dev": "nuxt dev",
+        "generate": "nuxt generate",
+        "preview": "nuxt preview"
+    },
+    "devDependencies": {
+        "nuxt": "3.0.0-rc.4",
+        "tailwindcss": "^3.1.4"
+    },
+    "dependencies": {
+        "@apollo/client": "^3.6.9",
+        "@heroicons/vue": "^1.0.6",
+        "@vee-validate/rules": "^4.5.11",
+        "axios": "^0.27.2",
+        "dotenv": "^16.0.1",
+        "express": "^4.18.1",
+        "graphql": "^16.5.0",
+        "vee-validate": "^4.5.11",
+        "vue-apollo": "^3.1.0"
+    }
 }

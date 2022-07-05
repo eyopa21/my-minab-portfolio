@@ -10,6 +10,13 @@
 </template>
 <script setup>
 import { ref } from 'vue';
+
+/*
+import { useQuery, useResult } from '@vue/apollo-composable'
+import { GET_PROJECTS } from '@/gql/queries.js'
+
+
+*/
 const projects = ref([{
   title: 'GBI App',
   subTitle: 'Social media application for University students',
@@ -40,9 +47,11 @@ const projects = ref([{
 }
 ])
 
-
-
-
+/*
+const { loading, result, error } = useQuery(GET_PROJECTS)
+console.log(result, "from hasura")
+console.log(error, "hasura")
+*/
 useHead({
   title: "ProjectsPage",
   meta: [{
