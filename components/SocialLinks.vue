@@ -10,10 +10,10 @@ const showLinkedinTooltip = ref(false)
 </script>
 
 <template>
-    <div v-if="showPhoneTooltip" class="absolute mr-6">0918784596</div>
-    <div v-if="showEmailTooltip" class="absolute mr-6 mt-8">jobtennis21@gmail.com</div>
-    <div v-if="showFacebookTooltip" class="absolute mr-6 mt-16">Job nigussie</div>
-    <div v-if="showLinkedinTooltip" class="absolute mr-6 mt-24">Job Nigussie</div>
+    <div v-if="showPhoneTooltip" class="absolute mr-6 mt-[80px] text-white text-xs md:text-md ">0918784596</div>
+    <div v-if="showEmailTooltip" class="absolute mr-6 mt-[110px] text-white text-xs md:text-md">jobtennis21@gmail.com</div>
+    <div v-if="showFacebookTooltip" class="absolute mr-6 mt-[150px] text-white text-xs md:text-md">Job nigussie</div>
+    <div v-if="showLinkedinTooltip" class="absolute mr-6 mt-[180px] text-white text-xs md:text-md">Job Nigussie</div>
     
   <div class="flex flex-col justify-center text-white">
   

@@ -16,7 +16,7 @@ module.exports = {
         },
         extend: {
             colors: {
-                primary: '#B0F991',
+                primary: '#80ffbf',
                 secondary: '#B2C2BF',
                 bg_color: '#221F1F',
                 light_white: '#ECFFFB',
@@ -42,7 +42,9 @@ module.exports = {
             fontFamily: {
                 logo: 'Rubik Moonrocks',
                 main: 'Righteous',
-                test1: 'Cinzel'
+                test1: 'Cinzel',
+                headers: 'Splash',
+                test2: 'Merienda One'
             }
         },
     },

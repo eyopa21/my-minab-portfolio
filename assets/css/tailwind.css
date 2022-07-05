@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&family=Righteous&family=Rubik+Moonrocks&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Righteous&family=Rubik+Moonrocks&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&family=Righteous&family=Rubik+Moonrocks&family=Splash&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&family=Merienda+One&family=Righteous&family=Rubik+Moonrocks&family=Rye&family=Splash&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

@@ -3,6 +3,7 @@
     <section id="skills" class="mb-32">
       <div class="flex flex-col md:flex-row justify-start mx-2 md:ml-16">
         <div class="flex flex-col mb-8 space-y-6 md:w-1/2">
+          <headers name="<h2>" />
           <h1
             class="
               text-5xl
@@ -16,15 +17,19 @@
           >
             Contact me
           </h1>
+          <headers name="</h2>" />
+          <headers name="<p>" />
           <p class="text-left text-secondary md:mr-0">
-          I'll be very pleased if you give a job opportunity for your software projects, and also Since feedbacks are the key to improvements I'll apprciated it if you leave your generous feedback over here.<br><br> THANK YOU!!!!!
+            I'll be very pleased if you give a job opportunity for your software
+            projects, and also Since feedbacks are the key to improvements I'll
+            apprciated it if you leave your generous feedback over here.<br /><br />
+            THANK YOU!!!!!
           </p>
+          <headers name="</p>" />
         </div>
         <div class="md:ml-12">
-          <VForm
-            @submit="send"
-            class="px-2 pt-6 pb-8 mb-4 bg-bg_color rounded"
-          >
+        <headers name="<form>" />
+          <VForm @submit="send" class="px-2 pt-6 pb-8 mb-4 bg-bg_color rounded">
             <div
               class="
                 mb-2
@@ -43,6 +48,7 @@
                 >
                   Name
                 </label>
+
                 <VField
                   class="
                     bg-bg_color
@@ -65,9 +71,11 @@
                   type="text"
                   placeholder="Your name here..."
                 />
-                <VErrorMessage name="Name" class="text-red-400 text-sm"
-                  ></VErrorMessage
-                >
+
+                <VErrorMessage
+                  name="Name"
+                  class="text-red-400 text-sm"
+                ></VErrorMessage>
               </div>
               <div class="md:ml-2 w-full">
                 <label
@@ -154,7 +162,6 @@
                 class="
                   bg-bg_color
                   align-top
-                  
                   w-full
                   pb-32
                   px-3
@@ -167,10 +174,6 @@
                   rounded
                   shadow
                   appearance-none
-                 
-                  
-                 
-                 
                 "
                 id="message"
                 name="Message"
@@ -179,7 +182,6 @@
                 type="text"
                 placeholder="The message here..."
                 col="5"
-              
               >
               </VField>
               <div>
@@ -195,6 +197,8 @@
                 <nuxt-link
                   type="submit"
                   class="
+                    mt-2
+                    mb-2
                     p-3
                     px-6
                     pt-2
@@ -235,6 +239,8 @@
               </button>
             </div>
           </VForm>
+
+          <headers name="</form>" />
         </div>
       </div>
     </section>
@@ -243,12 +249,11 @@
 
   
 <script setup>
-import { useForm, useField } from 'vee-validate';
+import { useForm, useField } from "vee-validate";
 import axios from "axios";
 import { ref } from "vue";
 const alert = useAlert();
 const loading = useLoading();
-
 
 const formData = ref({
   name: "",
@@ -264,45 +269,43 @@ const isRequired = (value) => {
   return "This field is required!!";
 };
 
-const send = (value, {resetForm}) => {
+const send = (value, { resetForm }) => {
+  if (process.client) {
+    loading.value = true;
+  }
 
-    if (process.client) {
-      loading.value = true;
-    }
+  axios({
+    method: "post",
+    url: "/api",
+    data: formData.value,
+    headers: { "Content-Type": "application/json" },
+  })
+    .then((res) => {
+      console.log(res);
+      console.log("sent");
 
-    axios({
-      method: "post",
-      url: "/api",
-      data: formData.value,
-      headers: { "Content-Type": "application/json" },
+      if (process.client) {
+        loading.value = false;
+        alert.value = res.data;
+        formData.value.email = "";
+        formData.value.name = "";
+        formData.value.subject = "";
+        formData.value.message = "";
+      }
+      resetForm();
     })
-      .then((res) => {
-        console.log(res);
-        console.log("sent");
-          
-        if (process.client) {
-          loading.value = false;
-          alert.value = res.data;
-          formData.value.email = "";
-          formData.value.name = "";
-          formData.value.subject = "";
-          formData.value.message = "";
-        }
-        resetForm();
-      })
-      .catch((error) => {
-        console.log("erri", error);
-        if (process.client) {
-          loading.value = false;
-          alert.value = "Request not sent, please try again!!";
-          formData.value.email = "";
-          formData.value.name = "";
-          formData.value.subject = "";
-          formData.value.message = "";
-        }
-        resetForm();
-      });
- 
+    .catch((error) => {
+      console.log("erri", error);
+      if (process.client) {
+        loading.value = false;
+        alert.value = "Request not sent, please try again!!";
+        formData.value.email = "";
+        formData.value.name = "";
+        formData.value.subject = "";
+        formData.value.message = "";
+      }
+      resetForm();
+    });
 };
 
 useHead({
