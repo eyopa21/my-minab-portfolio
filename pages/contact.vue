@@ -15,20 +15,23 @@
               font-serif
             "
           >
-            Contact me
+            <alphabets name="C" /><alphabets name="o" /><alphabets
+              name="n"
+            /><alphabets name="t" /><alphabets name="a" /><alphabets
+              name="c"
+            /><alphabets name="t" class="mr-4" /><alphabets
+              name="M"
+            /><alphabets name="e" />
           </h1>
           <headers name="</h2>" />
           <headers name="<p>" />
           <p class="text-left text-secondary md:mr-0">
-            I'll be very pleased if you give a job opportunity for your software
-            projects, and also Since feedbacks are the key to improvements I'll
-            apprciated it if you leave your generous feedback over here.<br /><br />
-            THANK YOU!!!!!
+            {{ contactContent }}
           </p>
           <headers name="</p>" />
         </div>
         <div class="md:ml-12">
-        <headers name="<form>" />
+          <headers name="<form>" />
           <VForm @submit="send" class="px-2 pt-6 pb-8 mb-4 bg-bg_color rounded">
             <div
               class="
@@ -254,6 +257,7 @@ import axios from "axios";
 import { ref } from "vue";
 const alert = useAlert();
 const loading = useLoading();
+const contactContent = useContactContent();
 
 const formData = ref({
   name: "",

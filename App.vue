@@ -1,19 +1,44 @@
+
 <script setup>
+const barLoading = useBarLoading();
+const image = useImage();
 
-
-
-
+ if (process.client) {
+            barLoading.value = true;
+        }
+const projects = useProjects();
+const { getProjects, getSkills, getContents, getImages } = useQueries();
+getProjects();
+getSkills();
+getContents();
+getImages();
 </script>
 
 <template>
-  <div class="min-h-full min-w-full bg-bg_color ">
-    <NuxtLayout name="default">
-      <NuxtPage />
-    </NuxtLayout>
+  <div style="z-index: 2">
+    <div id="main" class="min-h-full min-w-full bg-bg_color">
+      <NuxtLayout name="default">
+        <NuxtPage class="z-100" />
+      </NuxtLayout>
+    </div>
   </div>
+  <alert />
 
   <Head>
-  <Link rel="icon" href="https://firebasestorage.googleapis.com/v0/b/gbi-date.appspot.com/o/images%2Feyobaaaaaaaaa.jpg?alt=media&token=fcd6b46e-51ab-434f-97dd-70ae19761d06"></Link>
-  <!--Title>Eyoba</Title-->
+    <Link
+      rel="icon"
+      :href="image"
+    ></Link>
   </Head>
 </template>
+<style>
+canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -9999;
+}
+</style>

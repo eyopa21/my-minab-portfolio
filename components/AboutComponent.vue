@@ -29,23 +29,15 @@
 
       <headers name="<p>" />
       <p class="max-w-3xl mr-2 text-left text-secondary md:text-left">
-        My name is Eyob Nigussie Chekol, I prefer to express myself as a self
-        learned Full stack Software Engineer. I am currently 4th year Software
-        engineering and 3rd year Managment Science student at Bahiradar
-        Univeristy!!.<br />
-        I have a passion for developing innovative programs that solves real
-        world problems. I see myself as an adaptable, fast learner, curious and
-        commited developer.I believe that consistency breeds sucesss. I consider
-        myself as an humble, experienced and disciplined developer who works
-        based on plan.
+        {{ aboutContent }}
       </p>
       <headers name="</p>" />
     </div>
 
     <div class="container mx-auto md:w-1/3">
-    <headers name="<img>" />
+      <headers name="<img>" />
       <img
-        src="https://firebasestorage.googleapis.com/v0/b/gbi-date.appspot.com/o/images%2Feyobaaaaaaaaa.jpg?alt=media&token=fcd6b46e-51ab-434f-97dd-70ae19761d06"
+        :src="image"
         alt="image"
         class="
           h-96
@@ -63,3 +55,7 @@
     </div>
   </section>
 </template>
+<script setup>
+const aboutContent = useAboutContent();
+const image = useImage();
+</script>

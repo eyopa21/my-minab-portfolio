@@ -1,12 +1,12 @@
 <template>
   <div class="text-white text-sm">
-    {{ props.skills.name }}: {{ props.skills.level }}%
+    {{ props.skills.skill_name }}: {{ props.skills.level }}%
   </div>
   <div class="w-full max-w-md sm:w-96 h-1 bg-white relative rounded-full">
     <div
-      class="h-full rounded-l-full absolute"
+      class="h-full rounded-l-full absolute bg-green-400"
       :style="{ width: `${props.skills.level}%` }"
-      :class="[props.skills.color ? `${props.skills.color}` : 'bg-primary']"
+      
     ></div>
   </div>
 

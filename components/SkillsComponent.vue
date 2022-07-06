@@ -36,61 +36,23 @@
       <headers name="</h2>" />
       <headers name="<p>" />
       <p class="text-left text-secondary md:text-left mr-2">
-        When I started University, I have tried to learn the basics of
-        programming like C++, Object oriented programming,JAVA and Python. But
-        when I give more time for programming I am starting prefer to use
-        javascript language as a whole for the simplicity and Portablity of it.
+       {{skillsContent}}
       </p>
       <headers name="</p>" />
     </div>
     <div>
-      <headers name="<Skillbar>" />
+     
       <div class="ml-4 md:ml-12 mr-4 pr-4">
         <div v-for="skill in skills" :key="skill">
           <ProgressBar :skills="skill" />
         </div>
       </div>
-      <headers name="</Skillbar>" />
+      
     </div>
   </section>
 </template>
 <script setup>
 import { ref } from "vue";
-const skills = ref([
-  {
-    name: "html,css & Javascript",
-    level: 70,
-    color: "bg-green-600",
-  },
-  {
-    name: "Vue js",
-    level: 80,
-    color: "bg-green-600",
-  },
-  {
-    name: "BackEnd/Node js",
-    level: 65,
-    color: "bg-green-600",
-  },
-  {
-    name: "Quasar",
-    level: 90,
-    color: "bg-green-600",
-  },
-  {
-    name: "Cordova/electron/tauri",
-    level: 50,
-    color: "bg-green-600",
-  },
-  {
-    name: "P5 js",
-    level: 70,
-    color: "bg-green-600",
-  },
-  {
-    name: "Game development",
-    level: 50,
-    color: "bg-green-600",
-  },
-]);
+const skills = useSkills()
+const skillsContent = useSkillsContent()
 </script>

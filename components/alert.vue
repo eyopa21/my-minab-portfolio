@@ -52,4 +52,14 @@
 
 <script setup>
 const alert = useAlert();
+
+if (alert.value !== '') {
+  setTimeout(() => {
+    if (process.client) {
+      alert.value = '';
+    }
+  }, 1000);
+}
+
+
 </script>

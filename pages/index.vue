@@ -24,14 +24,14 @@
           md:text-[80px]
           font-bold
           text-left
-          leading-[70px]
+          md:leading-[70px]
         "
       >
         <alphabets name="H" /><alphabets name="i" />,<br />
         <alphabets name="I" />'<alphabets name="m" class="mr-4" />
-        <alphabets name="E" class=" text-5xl lg:text-8xl font-test2" /><alphabets name="y" /><alphabets
-          name="o"
-        /><alphabets name="b" /> <br />
+        <alphabets name="E" class="lg:text-8xl font-test2" /><alphabets
+          name="y"
+        /><alphabets name="o" /><alphabets name="b" /> <br />
         <alphabets name="S" /><alphabets name="o" /><alphabets
           name="f"
         /><alphabets name="t" /><alphabets name="w" /><alphabets

@@ -1,6 +1,5 @@
 <template>
   <div class="mx-auto px-5 mb-3">
-  
     <div
       class="
         bg-bg_color
@@ -31,7 +30,7 @@
         </h5>
 
         <div class="text-xs font-bold text-white mt-1 mb-2">
-          {{ props.projects.subTitle }}
+          {{ props.projects.subtitle }}
         </div>
         <p class="mb-3 font-normal text-secondary dark:text-gray-400">
           {{ props.projects.description }}
@@ -55,7 +54,6 @@
         </div>
       </div>
     </div>
-   
   </div>
 </template>
 <script setup>
