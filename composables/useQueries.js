@@ -71,7 +71,12 @@ export default function() {
         }
         watchEffect(() => {
             if (result.value) {
+
+                console.log("connn", result.value)
+                console.log("connn", result.value.contents[0].description)
+                console.log("connn", result.value.contents[2])
                 aboutContent.value = result.value.contents[0].description;
+                console.log("connn", aboutContent.value)
                 skillsContent.value = result.value.contents[1].description;
                 contactContent.value = result.value.contents[2].description;
                 if (process.client) {

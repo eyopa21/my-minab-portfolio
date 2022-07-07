@@ -6,7 +6,7 @@
         fixed
         bottom-0
         right-0
-        m-8
+        m-4
         w-5/6
         md:w-full
         max-w-sm
@@ -23,7 +23,7 @@
           w-full
           p-2
           bg-green-500
-          h-24
+          h-16
           rounded
           shadow-lg
           text-white
