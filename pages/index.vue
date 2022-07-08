@@ -1,5 +1,6 @@
 <template>
-  <section
+  <div
+  v-if="homePage"
     id="home"
     class="
       font-serif
@@ -12,12 +13,13 @@
       mx-auto
       mt-0
       text-primary
-      mb-32
+      
     "
   >
     <div class="flex flex-col mb-32 space-y-4 w-full">
       <headers name="<h1>" />
       <h1
+        
         class="
           text-3xl
           sm:text-[46px]
@@ -27,27 +29,31 @@
           md:leading-[70px]
         "
       >
-        <alphabets name="H" /><alphabets name="i" />,<br />
-        <alphabets name="I" />'<alphabets name="m" class="mr-4" />
-        <alphabets name="E" class="lg:text-8xl font-test2" /><alphabets
-          name="y"
-        /><alphabets name="o" /><alphabets name="b" /> <br />
-        <alphabets name="S" /><alphabets name="o" /><alphabets
-          name="f"
-        /><alphabets name="t" /><alphabets name="w" /><alphabets
-          name="a"
-        /><alphabets name="r" /><alphabets name="e" class="mr-4" />
-        <alphabets name="e" /><alphabets name="n" /><alphabets
-          name="g"
-        /><alphabets name="i" /><alphabets name="n" /><alphabets
-          name="e"
-        /><alphabets name="e" /><alphabets name="r" />
+        <alphabets :name="heading[0]" /><alphabets
+          :name="heading[1]"
+        /><alphabets :name="heading[2]" /><br />
+        <alphabets :name="heading[4]" /><alphabets
+          :name="heading[5]"
+        /><alphabets :name="heading[6]" class="mr-4" />
+        <alphabets :name="heading[8]" class="lg:text-8xl font-test2" /><alphabets
+         :name="heading[9]"
+        /><alphabets :name="heading[10]" /><alphabets :name="heading[11]" /><alphabets :name="heading[12]" /><br />
+        <alphabets :name="heading[14]" /><alphabets :name="heading[15]" /><alphabets
+          :name="heading[16]"
+        /><alphabets :name="heading[17]" /><alphabets
+          :name="heading[18]"
+        /><alphabets :name="heading[19]" /><alphabets :name="heading[20]" />
+        <alphabets :name="heading[21]" class="mr-4"/><alphabets :name="heading[23]" /><alphabets :name="heading[24]" /><alphabets
+         :name="heading[25]"
+        /><alphabets :name="heading[26]" /><alphabets :name="heading[27]" /><alphabets
+          :name="heading[28]"
+        /><alphabets :name="heading[29]" /><alphabets :name="heading[30]" />
       </h1>
 
       <headers name="</h1>" />
 
       <p class="text-left tracking-widest text-blue-600">
-        <headers name="<p>" /> Website developer and UI/UX designer<headers
+        <headers name="<p>" /> {{homePage.description}}<headers
           name="</p>"
         />
       </p>
@@ -64,9 +70,13 @@
     <div class="flex justify-end mb-32 mt-64 mr-2">
       <SocialLinks />
     </div>
-  </section>
+  </div>
 </template>
 <script setup>
+const homePage = useHomePage();
+const heading = ref("");
+heading.value = homePage.value.header;
+
 useHead({
   title: "Home page",
   meta: [

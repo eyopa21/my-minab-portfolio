@@ -1,33 +1,27 @@
 import { useQuery } from "@vue/apollo-composable";
-import { GET_PROJECTS } from "../gql/ProjectQueries.js";
-import { GET_SKILLS } from "../gql/SkillQueries.js";
-import { GET_CONTENTS } from "../gql/ContentQueries.js";
-import { GET_IMAGES } from "../gql/ImageQueries.js";
+import { GET_SKILLSPAGE } from "../gql/SkillsPageQuery.js";
+import { GET_ABOUTPAGE } from "../gql/AboutPageQuery.js";
+import { GET_HOMEPAGE } from "../gql/HomePageQuery.js";
+import { GET_CONTACTPAGE } from "../gql/ContactPageQuery.js";
 
 export default function() {
-    const projects = useProjects();
-    const skills = useSkills();
-    const images = useImage();
-
-    const aboutContent = useAboutContent();
-    const skillsContent = useSkillsContent();
-    const contactContent = useContactContent();
+    const homePage = useHomePage();
+    const aboutPage = useAboutPage();
+    const skillsPage = useSkillsPage();
+    const contactPage = useContactPage();
 
     const barLoading = useBarLoading();
     const alert = useAlert();
 
-    function getProjects() {
-        console.log("from", projects.value);
-
-        const { loading, result, error } = useQuery(GET_PROJECTS);
-
+    function getHomePage() {
+        const { loading, result, error } = useQuery(GET_HOMEPAGE);
         if (process.client) {
             barLoading.value = true;
         }
         watchEffect(() => {
             if (result.value) {
-                projects.value = result.value.projects;
-                console.log("projjjjj", projects.value);
+                homePage.value = result.value.homepage[0];
+
                 if (process.client) {
                     barLoading.value = false;
                 }
@@ -41,15 +35,15 @@ export default function() {
         });
     }
 
-    function getSkills() {
-        const { loading, result, error } = useQuery(GET_SKILLS);
-
+    function getAboutPage() {
+        const { loading, result, error } = useQuery(GET_ABOUTPAGE);
         if (process.client) {
             barLoading.value = true;
         }
         watchEffect(() => {
             if (result.value) {
-                skills.value = result.value.skills;
+                aboutPage.value = result.value.aboutpage[0];
+
                 if (process.client) {
                     barLoading.value = false;
                 }
@@ -63,22 +57,16 @@ export default function() {
         });
     }
 
-    function getContents() {
-        const { loading, result, error } = useQuery(GET_CONTENTS);
-
+    function getSkillsPage() {
+        const { loading, result, error } = useQuery(GET_SKILLSPAGE);
         if (process.client) {
             barLoading.value = true;
         }
         watchEffect(() => {
             if (result.value) {
+                console.log("skills", result.value);
+                skillsPage.value = result.value.skillspage[0];
 
-                console.log("connn", result.value)
-                console.log("connn", result.value.contents[0].description)
-                console.log("connn", result.value.contents[2])
-                aboutContent.value = result.value.contents[0].description;
-                console.log("connn", aboutContent.value)
-                skillsContent.value = result.value.contents[1].description;
-                contactContent.value = result.value.contents[2].description;
                 if (process.client) {
                     barLoading.value = false;
                 }
@@ -92,15 +80,15 @@ export default function() {
         });
     }
 
-    function getImages() {
-        const { loading, result, error } = useQuery(GET_IMAGES);
-
+    function getContactPage() {
+        const { loading, result, error } = useQuery(GET_CONTACTPAGE);
         if (process.client) {
             barLoading.value = true;
         }
         watchEffect(() => {
             if (result.value) {
-                images.value = result.value.images[0].main_image;
+                contactPage.value = result.value.contactpage[0];
+
                 if (process.client) {
                     barLoading.value = false;
                 }
@@ -113,10 +101,11 @@ export default function() {
             }
         });
     }
+
     return {
-        getProjects,
-        getSkills,
-        getContents,
-        getImages,
+        getHomePage,
+        getAboutPage,
+        getSkillsPage,
+        getContactPage,
     };
 }

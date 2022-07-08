@@ -1,5 +1,6 @@
 <template>
   <section
+  v-if="aboutPage"
     id="about"
     class="mb-32 flex flex-col ml-2 md:ml-8 md:flex-row mx-auto"
   >
@@ -21,7 +22,7 @@
         /><alphabets name="y" /><alphabets name="s" /><alphabets
           name="e"
         /><alphabets name="l" /><alphabets name="f" class="mr-4" /><alphabets
-          name="&"
+          name="&amp;"
           class="mr-4"
         /><alphabets name="I" />
       </h1>
@@ -29,7 +30,7 @@
 
       <headers name="<p>" />
       <p class="max-w-3xl mr-2 text-left text-secondary md:text-left">
-        {{ aboutContent }}
+        {{ aboutPage.description }}
       </p>
       <headers name="</p>" />
     </div>
@@ -37,7 +38,7 @@
     <div class="container mx-auto md:w-1/3">
       <headers name="<img>" />
       <img
-        :src="image"
+        :src="aboutPage.imageByImage.url"
         alt="image"
         class="
           h-96
@@ -56,6 +57,6 @@
   </section>
 </template>
 <script setup>
-const aboutContent = useAboutContent();
-const image = useImage();
+const aboutPage = useAboutPage();
+
 </script>

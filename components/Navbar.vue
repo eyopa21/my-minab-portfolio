@@ -1,4 +1,6 @@
 <template>
+<div>
+
   <nav
     @resize="onResize()"
     class="
@@ -145,6 +147,7 @@
       </div>
     </div>
   </nav>
+  </div>
 </template>
 <script setup>
 import { ref } from "@vue/reactivity";

@@ -5,7 +5,7 @@ import { DefaultApolloClient } from "@vue/apollo-composable";
 export default defineNuxtPlugin((nuxtApp) => {
     const apolloClient = new ApolloClient({
         cache: new InMemoryCache(),
-        uri: "https://my-minab-portfolio.hasura.app/v1/graphql",
+        uri: "https://eyoba-portfolio.hasura.app/v1/graphql",
     });
     nuxtApp.vueApp.provide(DefaultApolloClient, apolloClient);
 });

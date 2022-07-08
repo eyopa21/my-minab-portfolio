@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="contactPage" class="">
     <section id="skills" class="mb-32">
       <div class="flex flex-col md:flex-row justify-start mx-2 md:ml-16">
         <div class="flex flex-col mb-8 space-y-6 md:w-1/2">
@@ -26,7 +26,7 @@
           <headers name="</h2>" />
           <headers name="<p>" />
           <p class="text-left text-secondary md:mr-0">
-            {{ contactContent }}
+            {{ contactPage.description }}
           </p>
           <headers name="</p>" />
         </div>
@@ -257,7 +257,10 @@ import axios from "axios";
 import { ref } from "vue";
 const alert = useAlert();
 const loading = useLoading();
-const contactContent = useContactContent();
+const contactPage = useContactPage()
+
+
+
 
 const formData = ref({
   name: "",

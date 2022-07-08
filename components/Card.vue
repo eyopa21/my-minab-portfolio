@@ -9,11 +9,20 @@
         dark:bg-gray-800 dark:border-gray-700
       "
     >
+    <div class="flex flex-row">
       <img
-        class="rounded-t-lg px-5 py-2 h-64 w-full"
+        class="rounded-t-lg px-5 py-2 h-64 w-3/4"
         :src="props.projects.image"
         alt="image"
       />
+       <div class="flex flex-col mt-2 space-y-0 md:space-y-2 pr-2">
+      <div class="text-white">Skills used</div>
+      <div v-for="skill in skills" :key="skill">
+      <badge :name="skill.skill_name" />
+      
+      </div>
+      </div>
+    </div>
 
       <div class="p-5">
         <h5
@@ -58,5 +67,11 @@
 </template>
 <script setup>
 const props = defineProps(["projects"]);
+
+const skills = useSkills()
+if(skills.value != ''){
+
+  console.log(skills.value)
+ }
 </script>
 

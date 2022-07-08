@@ -7,13 +7,13 @@ const barLoading = useBarLoading();
     <Navbar />
     <headers name="<html>" /><br />
     <headers name="<body>" />
-    <div v-if="barLoading" class="mb-96 text-center flex justify-center">
+    <div v-if="barLoading" class="mb-[560px] text-center flex justify-center">
       <loadingBar v-if="barLoading" />
     </div>
-    <slot v-else />
+    <slot v-else class="min-h-screen"/>
     <headers name="</body>" /> <br />
     <headers name="</html>" />
 
-    <Footer />
+    <Footer :class="barLoading? 'mt-128' : ''"/>
   </div>
 </template>

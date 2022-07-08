@@ -1,7 +1,8 @@
 <template>
-  <section
+  <div
+    v-if="skillsPage"
     id="skills"
-    class="mb-64 flex flex-col lg:flex-row justify-start ml-2 md:ml-16 mx-auto"
+    class="flex flex-col lg:flex-row justify-start ml-2 md:ml-16 mx-auto"
   >
     <div class="flex flex-col mb-16 space-y-6 lg:w-1/2 lg:ml-8">
       <headers name="<h2>" />
@@ -36,23 +37,20 @@
       <headers name="</h2>" />
       <headers name="<p>" />
       <p class="text-left text-secondary md:text-left mr-2">
-       {{skillsContent}}
+        {{ skillsPage.description }}
       </p>
       <headers name="</p>" />
     </div>
     <div>
-     
       <div class="ml-4 md:ml-12 mr-4 pr-4">
-        <div v-for="skill in skills" :key="skill">
+        <div v-for="skill in skillsPage.skills" :key="skill">
           <ProgressBar :skills="skill" />
         </div>
       </div>
-      
     </div>
-  </section>
+  </div>
 </template>
 <script setup>
 import { ref } from "vue";
-const skills = useSkills()
-const skillsContent = useSkillsContent()
+const skillsPage = useSkillsPage();
 </script>

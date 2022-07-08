@@ -1,21 +1,22 @@
 
 <script setup>
 const barLoading = useBarLoading();
-const image = useImage();
 
- if (process.client) {
-            barLoading.value = true;
-        }
-const projects = useProjects();
-const { getProjects, getSkills, getContents, getImages } = useQueries();
-getProjects();
-getSkills();
-getContents();
-getImages();
+if (process.client) {
+  barLoading.value = true;
+}
+
+const { getHomePage, getAboutPage, getSkillsPage, getContactPage } =
+  useQueries();
+
+getHomePage();
+getAboutPage();
+getSkillsPage();
+getContactPage();
 </script>
 
 <template>
-  <div style="z-index: 2">
+  <div class="bg-bg_color">
     <div id="main" class="min-h-full min-w-full bg-bg_color">
       <NuxtLayout name="default">
         <NuxtPage class="z-100" />
@@ -25,10 +26,7 @@ getImages();
   <alert />
 
   <Head>
-    <Link
-      rel="icon"
-      :href="image"
-    ></Link>
+    <Link rel="icon" href="image"></Link>
   </Head>
 </template>
 <style>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="aboutPage">
     <AboutComponent />
     <div
       class="
@@ -39,6 +39,7 @@
 </template>
 <script setup>
 import { IdentificationIcon } from "@heroicons/vue/solid";
+const aboutPage = useAboutPage()
 
 
 useHead({
