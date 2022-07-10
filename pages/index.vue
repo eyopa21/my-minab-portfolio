@@ -1,6 +1,6 @@
 <template>
   <div
-  v-if="homePage"
+  v-if="homePage && footer"
     id="home"
     class="
       font-serif
@@ -67,15 +67,19 @@
       </div>
     </div>
 
-    <div class="flex justify-end mb-32 mt-64 mr-2">
+    <div class="flex justify-end mb-32 mt-64 mr-2" v-if="footer[0]">
       <SocialLinks />
     </div>
   </div>
 </template>
 <script setup>
 const homePage = useHomePage();
+const footer = useFooter();
 const heading = ref("");
-heading.value = homePage.value.header;
+if(homePage.value !== ''){
+
+  heading.value = homePage.value.header;
+}
 
 useHead({
   title: "Home page",

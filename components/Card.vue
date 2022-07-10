@@ -17,8 +17,8 @@
       />
        <div class="flex flex-col mt-2 space-y-0 md:space-y-2 pr-2">
       <div class="text-white">Skills used</div>
-      <div v-for="skill in skills" :key="skill">
-      <badge :name="skill.skill_name" />
+      <div v-for="skill in props.projects.project_skills" :key="skill.id">
+      <badge :name="skill.skills.skill_name" />
       
       </div>
       </div>
@@ -68,10 +68,5 @@
 <script setup>
 const props = defineProps(["projects"]);
 
-const skills = useSkills()
-if(skills.value != ''){
-
-  console.log(skills.value)
- }
 </script>
 

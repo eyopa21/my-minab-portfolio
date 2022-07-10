@@ -6,18 +6,21 @@ if (process.client) {
   barLoading.value = true;
 }
 
-const { getHomePage, getAboutPage, getSkillsPage, getContactPage } =
+const { getHomePage, getAboutPage, getSkillsPage, getContactPage, getProjectsPage, getSocialLinks, getFooter } =
   useQueries();
 
 getHomePage();
 getAboutPage();
 getSkillsPage();
 getContactPage();
+getProjectsPage();
+getSocialLinks();
+getFooter();
 </script>
 
 <template>
   <div class="bg-bg_color">
-    <div id="main" class="min-h-full min-w-full bg-bg_color">
+    <div id="main" class=" min-w-full bg-bg_color">
       <NuxtLayout name="default">
         <NuxtPage class="z-100" />
       </NuxtLayout>

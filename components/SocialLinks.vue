@@ -3,6 +3,9 @@ import { PhoneIncomingIcon } from "@heroicons/vue/outline";
 import { MailIcon } from "@heroicons/vue/outline";
 import { ref } from "vue";
 
+const socialLinks = useSocialLinks()
+
+
 const showPhoneTooltip = ref(false);
 const showEmailTooltip = ref(false);
 const showFacebookTooltip = ref(false);
@@ -10,32 +13,33 @@ const showLinkedinTooltip = ref(false);
 </script>
 
 <template>
+ 
   <div
-    v-if="showPhoneTooltip"
+    v-if="showPhoneTooltip && socialLinks[0].value"
     class="absolute mr-6 mt-[55px] md:mt-[90px] text-white text-xs md:text-md"
   >
-    0918784596
+    {{socialLinks[0].value}}
   </div>
   <div
-    v-if="showEmailTooltip"
+    v-if="showPhoneTooltip && socialLinks[0].value"
     class="absolute mr-6 mt-[95px] md:mt-[120px] text-white text-xs md:text-md"
   >
-    jobtennis21@gmail.com
+     {{socialLinks[1].value}}
   </div>
   <div
-    v-if="showFacebookTooltip"
+   v-if="showPhoneTooltip && socialLinks[0].value"
     class="absolute mr-6 mt-[125px] md:mt-[150px] text-white text-xs md:text-md"
   >
     Job nigussie
   </div>
   <div
-    v-if="showLinkedinTooltip"
+   v-if="showPhoneTooltip && socialLinks[0].value"
     class="absolute mr-6 mt-[155px] md:mt-[190px] text-white text-xs md:text-md"
   >
     Job Nigussie
   </div>
 
-  <div class="flex flex-col justify-center text-white">
+  <div v-if="socialLinks[0].value" class="flex flex-col justify-center text-white">
     <a href="tel:+251918784596" class="h-8">
       <PhoneIncomingIcon
         class="text-white w-6 h-6 hover:stroke-primary"
@@ -49,7 +53,7 @@ const showLinkedinTooltip = ref(false);
         @mouseleave="showEmailTooltip = false"
     /></a>
     <a
-      href="https://www.facebook.com/eyob.nigussie.311"
+      :href="socialLinks[2].value"
       target="_blank"
       class="h-8"
       ><svg
@@ -65,7 +69,7 @@ const showLinkedinTooltip = ref(false);
         /></svg
     ></a>
     <a
-      href="https://www.linkedin.com/in/eyob-nigussie-66271b19a/"
+      :href="socialLinks[3].value"
       target="_blank"
       class="h-8"
       ><svg
@@ -81,4 +85,7 @@ const showLinkedinTooltip = ref(false);
         <circle cx="1.75" cy="1.75" r="1.75" /></svg
     ></a>
   </div>
+
+
 </template>
+

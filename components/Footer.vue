@@ -1,5 +1,5 @@
 <template>
-  <section id="ctas" class="bg-bg_color">
+  <section id="ctas" class="bg-bg_color" v-if="footer">
     <div
       class="
         flex
@@ -42,12 +42,16 @@
             stroke-width="16"
             d="M160.00112,152.00142a40,40,0,1,1-.00029-48.013"
           /></svg
-        >2022, Addis Ababa
+        >{{footer[0].year}}, {{footer[0].city}}
       </p>
 
       <div>
-        <p>Designed by: Eyob Nigussie</p>
+        <p>Designed by: {{footer[0].name}}</p>
       </div>
     </div>
   </section>
 </template>
+
+<script setup>
+const footer = useFooter()
+</script>
