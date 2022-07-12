@@ -26,7 +26,7 @@ getFooter();
       </NuxtLayout>
     </div>
   </div>
-  <alert />
+  <!--alert /-->
 
   <Head>
     <Link rel="icon" href="image"></Link>

@@ -7,7 +7,7 @@ const barLoading = useBarLoading();
     <Navbar />
     <headers name="<html>" /><br />
     <headers name="<body>" class="mb-128"/>
-    <div v-if="barLoading" class="mb-[660px] text-center flex justify-center">
+    <div v-if="barLoading" class="mb-[660px] w-full text-center flex justify-center">
       <loadingBar v-if="barLoading" />
     </div>
     <slot v-else class="min-h-screen"/>

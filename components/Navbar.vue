@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="z-1000">
 
   <nav
     @resize="onResize()"
@@ -14,6 +14,7 @@
       mx-auto
       p-6
       font-mono
+      z-100
     "
   >
     <div class="flex justify-between items-center">

@@ -76,10 +76,10 @@
 const homePage = useHomePage();
 const footer = useFooter();
 const heading = ref("");
-if(homePage.value !== ''){
+
 
   heading.value = homePage.value.header;
-}
+
 
 useHead({
   title: "Home page",

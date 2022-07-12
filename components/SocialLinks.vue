@@ -21,19 +21,19 @@ const showLinkedinTooltip = ref(false);
     {{socialLinks[0].value}}
   </div>
   <div
-    v-if="showPhoneTooltip && socialLinks[0].value"
+    v-if="showPhoneTooltip && socialLinks[1].value"
     class="absolute mr-6 mt-[95px] md:mt-[120px] text-white text-xs md:text-md"
   >
      {{socialLinks[1].value}}
   </div>
   <div
-   v-if="showPhoneTooltip && socialLinks[0].value"
+   v-if="showPhoneTooltip && socialLinks[2].value"
     class="absolute mr-6 mt-[125px] md:mt-[150px] text-white text-xs md:text-md"
   >
     Job nigussie
   </div>
   <div
-   v-if="showPhoneTooltip && socialLinks[0].value"
+   v-if="showPhoneTooltip && socialLinks[3].value"
     class="absolute mr-6 mt-[155px] md:mt-[190px] text-white text-xs md:text-md"
   >
     Job Nigussie

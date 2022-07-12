@@ -8,7 +8,7 @@
         right-0
         m-4
         w-5/6
-        mr-8
+       
         md:w-full
         max-w-sm
         animate-bounce
