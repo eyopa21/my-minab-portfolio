@@ -1,7 +1,7 @@
 
 <script setup>
 const barLoading = useBarLoading();
-
+const homePage = useHomePage()
 if (process.client) {
   barLoading.value = true;
 }
@@ -9,9 +9,9 @@ if (process.client) {
 const { getHomePage, getAboutPage, getSkillsPage, getContactPage, getProjectsPage, getSocialLinks, getFooter } =
   useQueries();
 
-getHomePage();
 getAboutPage();
 getSkillsPage();
+getHomePage();
 getContactPage();
 getProjectsPage();
 getSocialLinks();
@@ -19,7 +19,7 @@ getFooter();
 </script>
 
 <template>
-  <div class="bg-bg_color">
+  <div class="bg-bg_color" v-if="homePage">
     <div id="main" class=" min-w-full bg-bg_color">
       <NuxtLayout name="default">
         <NuxtPage class="z-100" />

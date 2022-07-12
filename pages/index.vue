@@ -78,8 +78,10 @@ const footer = useFooter();
 const heading = ref("");
 const socialLinks = useSocialLinks()
 
+if(homePage!== ''){
 
   heading.value = homePage.value.header;
+}
 
 
 useHead({
