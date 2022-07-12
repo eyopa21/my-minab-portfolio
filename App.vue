@@ -19,10 +19,10 @@ getFooter();
 </script>
 
 <template>
-  <div class="bg-bg_color" v-if="homePage">
+  <div class="bg-bg_color" >
     <div id="main" class=" min-w-full bg-bg_color">
       <NuxtLayout name="default">
-        <NuxtPage class="z-100" />
+        <NuxtPage v-if="homePage" class="z-100" />
       </NuxtLayout>
     </div>
   </div>
