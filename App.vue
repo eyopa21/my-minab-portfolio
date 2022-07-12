@@ -6,16 +6,17 @@ if (process.client) {
   barLoading.value = true;
 }
 
-const { getHomePage, getAboutPage, getSkillsPage, getContactPage, getProjectsPage, getSocialLinks, getFooter } =
+const { getHomePage, getAboutPage, getSkillsPage, getContactPage, getProjectsPage, getSocialLinks, getFooter, testt } =
   useQueries();
+  testt()
 
-getAboutPage();
-getSkillsPage();
-getHomePage();
-getContactPage();
-getProjectsPage();
-getSocialLinks();
-getFooter();
+//getAboutPage();
+//getSkillsPage();
+//getHomePage();
+//getContactPage();
+//getProjectsPage();
+//getSocialLinks();
+//getFooter();
 </script>
 
 <template>

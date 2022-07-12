@@ -1,4 +1,4 @@
-import { useQuery } from "@vue/apollo-composable";
+//import { useQuery } from "@vue/apollo-composable";
 import { GET_SKILLSPAGE } from "../gql/SkillsPageQuery.js";
 import { GET_ABOUTPAGE } from "../gql/AboutPageQuery.js";
 import { GET_HOMEPAGE } from "../gql/HomePageQuery.js";
@@ -139,9 +139,7 @@ export default function() {
         }
         watchEffect(() => {
             if (result.value) {
-
                 socialLinks.value = result.value.social_media_links;
-
 
                 if (process.client) {
                     barLoading.value = false;
@@ -178,6 +176,36 @@ export default function() {
         });
     }
 
+    async function testt() {
+        const endpointt = "https://eyoba-portfolio.hasura.app/v1/graphql";
+        const headers = {
+            "content-type": "application/json",
+        };
+        const graphqlQuery = {
+            "operationName": "footer",
+            "query": `query footer {
+                footer {
+                  id
+                  year
+                  name
+                  city
+                }
+              }`,
+        };
+
+        const optionss = {
+            method: "POST",
+            headers: headers,
+            body: JSON.stringify(graphqlQuery),
+        };
+
+        const res = await fetch(endpointt, optionss);
+        const data = await res.json();
+
+        console.log(data.data); // data
+        console.log(data.errors); //
+    }
+
     return {
         getHomePage,
         getAboutPage,
@@ -186,5 +214,6 @@ export default function() {
         getProjectsPage,
         getSocialLinks,
         getFooter,
+        testt,
     };
 }
