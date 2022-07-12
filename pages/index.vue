@@ -67,7 +67,7 @@
       </div>
     </div>
 
-    <div class="flex justify-end mb-32 mt-64 mr-2" v-if="footer[0]">
+    <div class="flex justify-end mb-32 mt-64 mr-2" v-if="socialLinks[0]">
       <SocialLinks />
     </div>
   </div>
@@ -76,6 +76,7 @@
 const homePage = useHomePage();
 const footer = useFooter();
 const heading = ref("");
+const socialLinks = useSocialLinks()
 
 
   heading.value = homePage.value.header;
