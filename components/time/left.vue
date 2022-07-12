@@ -11,23 +11,23 @@
         ml-auto
         shadow-md
         text-bg_color
-    
-        w-96
+   
+        w-88
+        md:w-92
+        lg:w-96
       "
     >
-      <h3 class="font-semibold text-lg uppercase">{{props.title}}</h3>
+      <h3 class="font-bold text-lg uppercase">{{props.title}}</h3>
       <h5 class="text-md mb-1 underline">{{props.subtitle}}</h5>
       <p class="leading-tight">
         {{props.description}}
       </p>
     </div>
-    <div class="col-start-5 col-end-6 md:mx-auto relative mr-10">
+    <div class=" md:mx-auto relative mr-10">
       <div class="h-full w-6 flex items-center justify-center">
         <div class="h-full w-1 bg-primary pointer-events-none"></div>
       </div>
-      <div
-        class="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-primary shadow"
-      ></div>
+      
     </div>
   </div>
 </template>

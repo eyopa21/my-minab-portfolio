@@ -3,7 +3,7 @@
     <div class="flex justify-start md:justify-center mt-8 mb-8">
       <AcademicCapIcon class="w-16 h-16 text-primary" />
     </div>
-    <div class="flex flex-col md:grid grid-cols-9 mx-auto p-2 text-blue-50" v-for="time in aboutPage.timelines" :key="time.id">
+    <div class="flex mr-2 flex-col md:grid grid-cols-9 mx-auto p-2 text-blue-50" v-for="time in aboutPage.timelines" :key="time.id">
   
    
       <!-- left -->

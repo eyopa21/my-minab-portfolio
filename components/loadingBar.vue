@@ -2,13 +2,12 @@
   <div>
     <div
       class="
-       
         max-w-md
         w-64
         sm:w-96
         h-1
         animate-ping
-        relative
+        z-0
         rounded-full rounded-l-full
         bg-primary
       "
@@ -17,6 +16,4 @@
 </template>
 
 <script setup>
-
-
 </script>

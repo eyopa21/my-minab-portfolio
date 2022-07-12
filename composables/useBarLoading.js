@@ -1,3 +1,3 @@
 export default function() {
-    return useState('barLoading', () => false)
+    return useState('barLoading', () => true)
 }

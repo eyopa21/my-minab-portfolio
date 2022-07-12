@@ -16,25 +16,25 @@ const showLinkedinTooltip = ref(false);
  
   <div
     v-if="showPhoneTooltip && socialLinks[0].value"
-    class="absolute mr-6 mt-[55px] md:mt-[90px] text-white text-xs md:text-md"
+    class="absolute mr-6 mt-[50px] md:mt-[97px] text-white text-xs md:text-md"
   >
     {{socialLinks[0].value}}
   </div>
   <div
-    v-if="showPhoneTooltip && socialLinks[1].value"
-    class="absolute mr-6 mt-[95px] md:mt-[120px] text-white text-xs md:text-md"
+    v-if="showEmailTooltip && socialLinks[1].value"
+    class="absolute mr-6 mt-[80px] md:mt-[127px] text-white text-xs md:text-md"
   >
      {{socialLinks[1].value}}
   </div>
   <div
-   v-if="showPhoneTooltip && socialLinks[2].value"
-    class="absolute mr-6 mt-[125px] md:mt-[150px] text-white text-xs md:text-md"
+   v-if="showFacebookTooltip && socialLinks[2].value"
+    class="absolute mr-6 mt-[110px] md:mt-[160px] text-white text-xs md:text-md"
   >
     Job nigussie
   </div>
   <div
-   v-if="showPhoneTooltip && socialLinks[3].value"
-    class="absolute mr-6 mt-[155px] md:mt-[190px] text-white text-xs md:text-md"
+   v-if="showLinkedinTooltip && socialLinks[3].value"
+    class="absolute mr-6 mt-[140px] md:mt-[195px] text-white text-xs md:text-md"
   >
     Job Nigussie
   </div>

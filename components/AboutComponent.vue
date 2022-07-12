@@ -40,6 +40,7 @@
       <img
         :src="aboutPage.imageByImage.url"
         alt="image"
+       loading="lazy" 
         class="
           h-96
           w-full

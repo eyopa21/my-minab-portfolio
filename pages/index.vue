@@ -52,7 +52,7 @@
 
       <headers name="</h1>" />
 
-      <p class="text-left tracking-widest text-blue-600">
+      <p class="text-left text-sm md:text-md tracking-widest text-blue-600">
         <headers name="<p>" /> {{homePage.description}}<headers
           name="</p>"
         />
