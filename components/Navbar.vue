@@ -6,13 +6,16 @@
     class="
       relative
       border-b-[1px]
-      md:border-b-0
+      md:border-b-[1px]
+      md:border-gray-700
+      
       mb-8
       border-white
       bg-bg_color
       text-white text-lg
       mx-auto
       p-6
+     pb-4
       font-mono
       z-100
     "

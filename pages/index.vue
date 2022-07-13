@@ -11,9 +11,9 @@
       xl:ml-16
       px-2
       mx-auto
-      mt-0
-      text-primary
       
+      text-primary
+    
     "
   >
     <div class="flex flex-col mb-32 space-y-4 w-full">
