@@ -1,12 +1,12 @@
 //import { useQuery } from "@vue/apollo-composable";
-import { GET_SKILLSPAGE } from "../gql/SkillsPageQuery.js";
-import { GET_ABOUTPAGE } from "../gql/AboutPageQuery.js";
-import { GET_HOMEPAGE } from "../gql/HomePageQuery.js";
-import { GET_CONTACTPAGE } from "../gql/ContactPageQuery.js";
-import { GET_PROJECTSPAGE } from "../gql/ProjectsPageQuery.js";
-import { GET_SOCIALLINKS } from "../gql/SocialLinksQuery.js";
+
 import useSocialLinks from "./useSocialLinks.js";
-import { GET_FOOTER } from "~~/gql/FooterQuery.js";
+
+
+const endpoint = "https://eyoba-portfolio.hasura.app/v1/graphql";
+const headers = {
+    "content-type": "application/json",
+};
 
 export default function() {
     const homePage = useHomePage();
@@ -20,170 +20,341 @@ export default function() {
     const barLoading = useBarLoading();
     const alert = useAlert();
 
-    function getHomePage() {
-        const { loading, result, error } = useQuery(GET_HOMEPAGE);
+
+    async function getHomePage() {
         if (process.client) {
             barLoading.value = true;
         }
-        watchEffect(() => {
-            if (result.value) {
-                homePage.value = result.value.homepage[0];
-
-                if (process.client) {
-                    barLoading.value = false;
-                }
-            }
-            if (error.value) {
-                console.log(error, "hasura");
-                if (process.client) {
-                    alert.value = "Please check your connection and try again!!";
-                }
-            }
-        });
-    }
-
-    function getAboutPage() {
-        const { loading, result, error } = useQuery(GET_ABOUTPAGE);
-        if (process.client) {
-            barLoading.value = true;
-        }
-        watchEffect(() => {
-            if (result.value) {
-                aboutPage.value = result.value.aboutpage[0];
-
-                if (process.client) {
-                    barLoading.value = false;
-                }
-            }
-            if (error.value) {
-                console.log(error, "hasura");
-                if (process.client) {
-                    alert.value = "Please check your connection and try again!!";
-                }
-            }
-        });
-    }
-
-    function getSkillsPage() {
-        const { loading, result, error } = useQuery(GET_SKILLSPAGE);
-        if (process.client) {
-            barLoading.value = true;
-        }
-        watchEffect(() => {
-            if (result.value) {
-                //console.log("skills", result.value);
-                skillsPage.value = result.value.skillspage[0];
-
-                if (process.client) {
-                    barLoading.value = false;
-                }
-            }
-            if (error.value) {
-                console.log(error, "hasura");
-                if (process.client) {
-                    alert.value = "Please check your connection and try again!!";
-                }
-            }
-        });
-    }
-
-    function getContactPage() {
-        const { loading, result, error } = useQuery(GET_CONTACTPAGE);
-        if (process.client) {
-            barLoading.value = true;
-        }
-        watchEffect(() => {
-            if (result.value) {
-                contactPage.value = result.value.contactpage[0];
-
-                if (process.client) {
-                    barLoading.value = false;
-                }
-            }
-            if (error.value) {
-                console.log(error, "hasura");
-                if (process.client) {
-                    alert.value = "Please check your connection and try again!!";
-                }
-            }
-        });
-    }
-
-    function getProjectsPage() {
-        const { loading, result, error } = useQuery(GET_PROJECTSPAGE);
-        if (process.client) {
-            barLoading.value = true;
-        }
-        watchEffect(() => {
-            if (result.value) {
-                //console.log("projects", result.value)
-                projectsPage.value = result.value.projects;
-
-                if (process.client) {
-                    barLoading.value = false;
-                }
-            }
-            if (error.value) {
-                console.log(error, "hasura");
-                if (process.client) {
-                    alert.value = "Please check your connection and try again!!";
-                }
-            }
-        });
-    }
-
-    function getSocialLinks() {
-        const { loading, result, error } = useQuery(GET_SOCIALLINKS);
-        if (process.client) {
-            barLoading.value = true;
-        }
-        watchEffect(() => {
-            if (result.value) {
-                socialLinks.value = result.value.social_media_links;
-
-                if (process.client) {
-                    barLoading.value = false;
-                }
-            }
-            if (error.value) {
-                console.log(error, "hasura");
-                if (process.client) {
-                    alert.value = "Please check your connection and try again!!";
-                }
-            }
-        });
-    }
-
-    function getFooter() {
-        const { loading, result, error } = useQuery(GET_FOOTER);
-        if (process.client) {
-            barLoading.value = true;
-        }
-        watchEffect(() => {
-            if (result.value) {
-                footer.value = result.value.footer;
-
-                if (process.client) {
-                    barLoading.value = false;
-                }
-            }
-            if (error.value) {
-                console.log(error, "hasura");
-                if (process.client) {
-                    alert.value = "Please check your connection and try again!!";
-                }
-            }
-        });
-    }
-
-    async function testt() {
-        const endpointt = "https://eyoba-portfolio.hasura.app/v1/graphql";
-        const headers = {
-            "content-type": "application/json",
-        };
         const graphqlQuery = {
-            "operationName": "footer",
-            "query": `query footer {
+            operationName: "homepage",
+            query: `query homepage {
+                homepage {
+                  id
+                  header
+                  description
+                }
+              }`,
+        };
+
+        const options = {
+            method: "POST",
+            headers: headers,
+            body: JSON.stringify(graphqlQuery),
+        };
+
+        const res = await fetch(endpoint, options);
+        const data = await res.json();
+        if (data.data) {
+            homePage.value = data.data.homepage[0];
+
+            if (process.client) {
+                barLoading.value = false;
+            }
+        }
+
+        if (data.errors) {
+            console.log(data.errors, "from hasura");
+            if (process.client) {
+                alert.value = "Please check your connection and try again!!";
+            }
+        }
+
+        if (process.client) {
+            console.log(data.data);
+            console.log(data.errors);
+        }
+    }
+    async function getAboutPage() {
+        if (process.client) {
+            barLoading.value = true;
+        }
+        const graphqlQuery = {
+            operationName: "aboutpage",
+            query: `query aboutpage {
+                aboutpage {
+                  id
+                  header
+                  description
+                  imageByImage {
+                    url
+                    id
+                  }
+                  timelines(order_by: {id: desc}) {
+                    id
+                    ofwhom
+                    right
+                    subtitle
+                    title
+                    description
+                  }
+                }
+              }`,
+        };
+
+        const options = {
+            method: "POST",
+            headers: headers,
+            body: JSON.stringify(graphqlQuery),
+        };
+
+        const res = await fetch(endpoint, options);
+        const data = await res.json();
+        if (data.data) {
+            aboutPage.value = data.data.aboutpage[0];
+
+            if (process.client) {
+                barLoading.value = false;
+            }
+        }
+
+        if (data.errors) {
+            console.log(data.errors, "from hasura");
+            if (process.client) {
+                alert.value = "Please check your connection and try again!!";
+            }
+        }
+
+        if (process.client) {
+            console.log(data.data);
+            console.log(data.errors);
+        }
+    }
+    async function getSkillsPage() {
+        if (process.client) {
+            barLoading.value = true;
+        }
+        const graphqlQuery = {
+            operationName: "skillspage",
+            query: `query skillspage {
+                skillspage {
+                  description
+                  header
+                  skills {
+                    level
+                    skill_name
+                    usedby
+                    ofwhom
+                    id
+                  }
+                  id
+                }
+              }`,
+        };
+
+        const options = {
+            method: "POST",
+            headers: headers,
+            body: JSON.stringify(graphqlQuery),
+        };
+
+        const res = await fetch(endpoint, options);
+        const data = await res.json();
+        if (data.data) {
+            skillsPage.value = data.data.skillspage[0];
+
+            if (process.client) {
+                barLoading.value = false;
+            }
+        }
+
+        if (data.errors) {
+            console.log(data.errors, "from hasura");
+            if (process.client) {
+                alert.value = "Please check your connection and try again!!";
+            }
+        }
+
+        if (process.client) {
+            console.log(data.data);
+            console.log(data.errors);
+        }
+    }
+    async function getProjectsPage() {
+        if (process.client) {
+            barLoading.value = true;
+        }
+        const graphqlQuery = {
+            operationName: "projects",
+            query: `query projects {
+                projects {
+                  id
+                  title
+                  subtitle
+                  description
+                  image
+                  link
+                  project_skills {
+                    skills {
+                      id
+                      skill_name
+                      level
+                    }
+                  }
+                }
+              }`,
+        };
+
+        const options = {
+            method: "POST",
+            headers: headers,
+            body: JSON.stringify(graphqlQuery),
+        };
+
+        const res = await fetch(endpoint, options);
+        const data = await res.json();
+        if (data.data) {
+            projectsPage.value = data.data.projects;
+
+            if (process.client) {
+                barLoading.value = false;
+            }
+        }
+
+        if (data.errors) {
+            console.log(data.errors, "from hasura");
+            if (process.client) {
+                alert.value = "Please check your connection and try again!!";
+            }
+        }
+
+        if (process.client) {
+            console.log(data.data);
+            console.log(data.errors);
+        }
+    }
+
+
+    async function getContactpage() {
+        if (process.client) {
+            barLoading.value = true;
+        }
+        const graphqlQuery = {
+            operationName: "contact",
+            query: `query contact {
+                contactpage {
+                  header
+                  description
+                  id
+                }
+              }`,
+        };
+
+        const options = {
+            method: "POST",
+            headers: headers,
+            body: JSON.stringify(graphqlQuery),
+        };
+
+        const res = await fetch(endpoint, options);
+        const data = await res.json();
+        if (data.data) {
+            contactPage.value = data.data.contactpage[0];
+
+            if (process.client) {
+                barLoading.value = false;
+            }
+        }
+
+        if (data.errors) {
+            console.log(data.errors, "from hasura");
+            if (process.client) {
+                alert.value = "Please check your connection and try again!!";
+            }
+        }
+
+        if (process.client) {
+            console.log(data.data);
+            console.log(data.errors);
+        }
+    }
+
+
+
+
+    async function getSocialLinks() {
+        if (process.client) {
+            barLoading.value = true;
+        }
+        const graphqlQuery = {
+            operationName: "social_media_links",
+            query: `query social_media_links {
+                social_media_links {
+                  id
+                  name
+                  icon_name
+                  value
+                }
+              }`,
+        };
+
+        const options = {
+            method: "POST",
+            headers: headers,
+            body: JSON.stringify(graphqlQuery),
+        };
+
+        const res = await fetch(endpoint, options);
+        const data = await res.json();
+        if (data.data) {
+            socialLinks.value = data.data.social_media_links;
+
+            if (process.client) {
+                barLoading.value = false;
+            }
+        }
+
+        if (data.errors) {
+            console.log(data.errors, "from hasura");
+            if (process.client) {
+                alert.value = "Please check your connection and try again!!";
+            }
+        }
+
+        if (process.client) {
+            console.log(data.data);
+            console.log(data.errors);
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    async function getFooter() {
+        if (process.client) {
+            barLoading.value = true;
+        }
+        const graphqlQuery = {
+            operationName: "footer",
+            query: `query footer {
                 footer {
                   id
                   year
@@ -193,27 +364,43 @@ export default function() {
               }`,
         };
 
-        const optionss = {
+        const options = {
             method: "POST",
             headers: headers,
             body: JSON.stringify(graphqlQuery),
         };
 
-        const res = await fetch(endpointt, optionss);
+        const res = await fetch(endpoint, options);
         const data = await res.json();
+        if (data.data) {
+            footer.value = data.data.footer;
 
-        console.log(data.data); // data
-        console.log(data.errors); //
+            if (process.client) {
+                barLoading.value = false;
+            }
+        }
+
+        if (data.errors) {
+            console.log(data.errors, "from hasura");
+            if (process.client) {
+                alert.value = "Please check your connection and try again!!";
+            }
+        }
+
+        if (process.client) {
+            console.log(data.data);
+            console.log(data.errors);
+        }
     }
 
     return {
+        getFooter,
         getHomePage,
         getAboutPage,
         getSkillsPage,
-        getContactPage,
         getProjectsPage,
-        getSocialLinks,
-        getFooter,
-        testt,
+        getContactpage,
+        getSocialLinks
+
     };
 }
