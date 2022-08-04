@@ -17,14 +17,16 @@
           font-serif
         "
       >
-        <alphabets name="M" /><alphabets name="e" />,<alphabets
-          name="M"
-        /><alphabets name="y" /><alphabets name="s" /><alphabets
-          name="e"
-        /><alphabets name="l" /><alphabets name="f" class="mr-4" /><alphabets
-          name="&amp;"
-          class="mr-4"
-        /><alphabets name="I" />
+            <div class="flex flex-row">
+              <div
+                class="flex flex-row"
+                v-for="i in aboutPage.header"
+                :key="i"
+              >
+                <div v-if="i >= 'A' && i <= 'Z' || i == '&'">&nbsp;</div>
+                <alphabets :name="i" />
+              </div>
+            </div>
       </h1>
       <headers name="</h2>" />
 
@@ -38,7 +40,7 @@
     <div class="container mx-auto md:w-1/3">
       <headers name="<img>" />
       <img
-        :src="aboutPage.imageByImage.url"
+        :src="footer[0].picture"
         alt="image"
        loading="lazy" 
         class="
@@ -59,5 +61,5 @@
 </template>
 <script setup>
 const aboutPage = useAboutPage();
-
+const footer = useFooter()
 </script>

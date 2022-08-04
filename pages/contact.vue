@@ -15,13 +15,17 @@
               font-serif
             "
           >
-            <alphabets name="C" /><alphabets name="o" /><alphabets
-              name="n"
-            /><alphabets name="t" /><alphabets name="a" /><alphabets
-              name="c"
-            /><alphabets name="t" class="mr-4" /><alphabets
-              name="M"
-            /><alphabets name="e" />
+           
+            <div class="flex flex-row">
+              <div
+                class="flex flex-row"
+                v-for="i in contactPage.header"
+                :key="i"
+              >
+                <div v-if="i >= 'A' && i <= 'Z'">&nbsp;</div>
+                <alphabets :name="i" />
+              </div>
+            </div>
           </h1>
           <headers name="</h2>" />
           <headers name="<p>" />
@@ -257,10 +261,7 @@ import axios from "axios";
 import { ref } from "vue";
 const alert = useAlert();
 const loading = useLoading();
-const contactPage = useContactPage()
-
-
-
+const contactPage = useContactPage();
 
 const formData = ref({
   name: "",

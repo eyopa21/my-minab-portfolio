@@ -42,7 +42,7 @@
             stroke-width="16"
             d="M160.00112,152.00142a40,40,0,1,1-.00029-48.013"
           /></svg
-        >{{footer[0].year}}, {{footer[0].city}}
+        >{{2022}}, {{footer[0].location}}
       </p>
 
       <div>

@@ -11,14 +11,14 @@
     >
     <div class="flex flex-row">
       <img
-        class="rounded-t-lg px-5 py-2 h-64 w-3/4"
-        :src="props.projects.image"
+        class="rounded-t-lg px-5 py-2 h-64 w-2/3"
+        :src="props.projects.pricture"
         alt="image"
       />
        <div class="flex flex-col mt-2 space-y-0 md:space-y-2 pr-2">
-      <div class="text-white">Skills used</div>
+      <div class="text-white uppercase font-semibold mb-2">Skills used</div>
       <div v-for="skill in props.projects.project_skills" :key="skill.id">
-      <badge :name="skill.skills.skill_name" />
+      <badge :skill="skill" />
       
       </div>
       </div>

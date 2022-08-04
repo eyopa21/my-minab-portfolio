@@ -6,7 +6,7 @@ const barLoading = useBarLoading();
 <template>
   <div class="bg-bg_color">
   <div class="fixed w-full  left-0 top-0">
-    <Navbar class=""/>
+    <Navbar/>
   </div>
     <div class="mt-16 pt-8">
     <headers class="mt-8" name="<html>" /><br />
@@ -20,11 +20,11 @@ const barLoading = useBarLoading();
     </div>
     <slot v-else class="min-h-screen" />
 
-    <div :class="barLoading?'mt-128':'mt-0'">
+    <div :class="barLoading?'':'mt-0'">
       <headers name="</body>" /> <br />
       <headers name="</html>" />
     </div>
 
-    <Footer :class="barLoading ? 'mt-128' : ''" />
+    <Footer :class="barLoading ? 'mt-128' : 'mt-0'" />
   </div>
 </template>
